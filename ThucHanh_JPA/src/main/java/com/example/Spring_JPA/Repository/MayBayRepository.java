@@ -14,4 +14,7 @@ public interface MayBayRepository extends CrudRepository<MayBay, Integer>{
 
 	@Query("Select mb from MayBay mb where mb.tamBay >10000")
 	public List<MayBay> findAllMayBayByTamBay10000 ();
+	
+	@Query("Select mb from MayBay mb where mb.tamBay >10000")
+	public List<MayBay> Cau7 ();
 }

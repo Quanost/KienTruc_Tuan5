@@ -20,4 +20,10 @@ public class ChuyenBay_Service {
 		
 	}
 	
+	public List<ChuyenBay> findAllChuyenBayByDoDaiDuongBay (int tamDuoi, int tamTren){
+		List<ChuyenBay> chuyenBays = chuyenBayRepository.findAllChuyenBayByDoDaiDuongBay(tamDuoi, tamTren);
+		return (List<ChuyenBay>) chuyenBayRepository.saveAll(chuyenBays) ;
+		
+	}
+	
 }

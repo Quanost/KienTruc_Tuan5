@@ -19,4 +19,10 @@ public class ChuyenBay_Controller {
 	public List<ChuyenBay> findAllChuyenBayByDaLat(){
 		return chuyenbay_service.findAllChuyenBayByGaDen("DAD");
 	}
+	
+	@GetMapping("/dodaiduongbay8000_1000")
+	public List<ChuyenBay> findAllChuyenBayByDoDaiDuongBay(){
+		return chuyenbay_service.findAllChuyenBayByDoDaiDuongBay(8000, 10000);
+	}
+	
 }

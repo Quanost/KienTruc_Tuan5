@@ -26,4 +26,9 @@ public class ChuyenBay_Service {
 		
 	}
 	
+	public List<ChuyenBay> findAllChuyenBayByXuatPhat (String gaden, String gadi){
+		List<ChuyenBay> chuyenBays = chuyenBayRepository.findAllChuyenBayByXuatPhat(gaden, gadi);
+		return (List<ChuyenBay>) chuyenBayRepository.saveAll(chuyenBays) ;
+		
+	}
 }

@@ -25,4 +25,8 @@ public class ChuyenBay_Controller {
 		return chuyenbay_service.findAllChuyenBayByDoDaiDuongBay(8000, 10000);
 	}
 	
+	@GetMapping("/xuatphat")
+	public List<ChuyenBay> findAllChuyenBayByXuatPhat(){
+		return chuyenbay_service.findAllChuyenBayByXuatPhat("SGN","BMV");
+	}
 }

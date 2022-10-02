@@ -21,4 +21,7 @@ public interface ChuyenBayRepository extends CrudRepository<ChuyenBay, String>{
 	
 	@Query(value="Select * from ChuyenBay cb where cb.do_dai >?1 && cb.do_dai<?2", nativeQuery = true)
 	public List<ChuyenBay> findAllChuyenBayByDoDaiDuongBay (int tamDuoi, int tamTren);
+	
+	@Query(value="Select * from ChuyenBay cb where cb.ga_den =?1 && cb.ga_di=?2", nativeQuery = true)
+	public List<ChuyenBay> findAllChuyenBayByXuatPhat (String gaden, String gadi);
 }

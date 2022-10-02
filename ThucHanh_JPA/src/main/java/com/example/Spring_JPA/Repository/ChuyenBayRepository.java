@@ -3,6 +3,7 @@ package com.example.Spring_JPA.Repository;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -24,4 +25,7 @@ public interface ChuyenBayRepository extends CrudRepository<ChuyenBay, String>{
 	
 	@Query(value="Select * from ChuyenBay cb where cb.ga_den =?1 && cb.ga_di=?2", nativeQuery = true)
 	public List<ChuyenBay> findAllChuyenBayByXuatPhat (String gaden, String gadi);
+	
+	@Query("Select count(cb) from ChuyenBay cb where cb.gaDi = 'SGN'")
+	public int countChuyenBayFromSGN();
 }

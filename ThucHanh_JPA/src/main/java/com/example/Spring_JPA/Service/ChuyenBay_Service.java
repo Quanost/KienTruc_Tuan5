@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.example.Spring_JPA.Entity.ChuyenBay;
@@ -30,5 +31,9 @@ public class ChuyenBay_Service {
 		List<ChuyenBay> chuyenBays = chuyenBayRepository.findAllChuyenBayByXuatPhat(gaden, gadi);
 		return (List<ChuyenBay>) chuyenBayRepository.saveAll(chuyenBays) ;
 		
+	}
+	
+	public int countChuyenBayFromSGN() {
+		return chuyenBayRepository.countChuyenBayFromSGN();
 	}
 }

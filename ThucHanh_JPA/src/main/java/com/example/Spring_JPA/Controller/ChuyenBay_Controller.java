@@ -3,6 +3,7 @@ package com.example.Spring_JPA.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +29,10 @@ public class ChuyenBay_Controller {
 	@GetMapping("/xuatphat")
 	public List<ChuyenBay> findAllChuyenBayByXuatPhat(){
 		return chuyenbay_service.findAllChuyenBayByXuatPhat("SGN","BMV");
+	}
+	
+	@GetMapping("/Cau6")
+	public int Cau6() {
+		return chuyenbay_service.countChuyenBayFromSGN();
 	}
 }
